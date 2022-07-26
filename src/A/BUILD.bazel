@@ -1,0 +1,16 @@
+load("@rules_rust//rust:defs.bzl", "rust_library")
+
+package(default_visibility = [
+    "//src/B:__pkg__",
+])
+
+rust_library(
+    name = "A",
+    srcs = ["src/main.rs"],
+)
+
+rust_library(
+    name = "A-for-tests",
+    srcs = ["src/main.rs"],
+    crate_features = ["foo"],
+)
